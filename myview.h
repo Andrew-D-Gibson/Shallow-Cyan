@@ -14,7 +14,7 @@
 #include "game_manager.h"
 
 
-// Class "myView" is responsible for managine interaction between the GUI
+// Class "myView" is responsible for managing interaction between the GUI
 // and the gameManager.  It also handles mouse events.
 class myView : public QGraphicsView
 {
