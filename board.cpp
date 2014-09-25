@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Andrew D. Gibson Personal. All rights reserved.
 //
 
-#include "Board.h"
+#include "board.h"
 #include "sstream"
 
 // -- UTILITY FUNCTIONS -- \\

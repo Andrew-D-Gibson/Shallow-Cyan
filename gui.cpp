@@ -38,20 +38,20 @@ pieceImage::pieceImage(QPixmap i, int l, bool c, bool flipped) : location(l), co
 GUI::GUI() {
 
     // White Pieces
-    wPawn = QPixmap(":/spriteImages/wp.png").scaled(QSize(256,256));
-    wBishop = QPixmap(":/spriteImages/wb.png").scaled(QSize(256,256));
-    wKnight = QPixmap(":/spriteImages/wn.png").scaled(QSize(256,256));
-    wRook = QPixmap(":/spriteImages/wr.png").scaled(QSize(256,256));
-    wQueen = QPixmap(":/spriteImages/wq.png").scaled(QSize(256,256));
-    wKing = QPixmap(":/spriteImages/wk.png").scaled(QSize(256,256));
+    wPawn = QPixmap("://GUI Images/wp.png").scaled(QSize(256,256));
+    wBishop = QPixmap("://GUI Images/wb.png").scaled(QSize(256,256));
+    wKnight = QPixmap("://GUI Images/wn.png").scaled(QSize(256,256));
+    wRook = QPixmap("://GUI Images/wr.png").scaled(QSize(256,256));
+    wQueen = QPixmap("://GUI Images/wq.png").scaled(QSize(256,256));
+    wKing = QPixmap("://GUI Images/wk.png").scaled(QSize(256,256));
 
     // Black Pieces
-    bPawn = QPixmap(":/spriteImages/bp.png").scaled(QSize(256,256));
-    bBishop = QPixmap(":/spriteImages/bb.png").scaled(QSize(256,256));
-    bKnight = QPixmap(":/spriteImages/bn.png").scaled(QSize(256,256));
-    bRook = QPixmap(":/spriteImages/br.png").scaled(QSize(256,256));
-    bQueen = QPixmap(":/spriteImages/bq.png").scaled(QSize(256,256));
-    bKing = QPixmap(":/spriteImages/bk.png").scaled(QSize(256,256));
+    bPawn = QPixmap("://GUI Images/bp.png").scaled(QSize(256,256));
+    bBishop = QPixmap("://GUI Images/bb.png").scaled(QSize(256,256));
+    bKnight = QPixmap("://GUI Images/bn.png").scaled(QSize(256,256));
+    bRook = QPixmap("://GUI Images/br.png").scaled(QSize(256,256));
+    bQueen = QPixmap("://GUI Images/bq.png").scaled(QSize(256,256));
+    bKing = QPixmap("://GUI Images/bk.png").scaled(QSize(256,256));
 
 }
 
@@ -62,7 +62,7 @@ void GUI::setPos(int boardPos[64]) {
 
     pieces.clear();
     scene->clear();
-    scene->addPixmap(QPixmap(":/spriteImages/Chess Board.png").scaled(QSize(2048, 2048)));
+    scene->addPixmap(QPixmap("://GUI Images/Chess Board.png").scaled(QSize(2048, 2048)));
 
     QPen boardBorder(QColor(0, 0, 0));
     boardBorder.setWidth(16);
