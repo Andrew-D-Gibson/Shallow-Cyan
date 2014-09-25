@@ -9,6 +9,6 @@ All the code is found in the files ending in .h and .cpp.
 The images found in the GUI Images folder are public domain.
 
 
-If you find any bugs, please report them to adgibson97@gmail.com.
+If you find any bugs or have a comment, please send it to adgibson97@gmail.com.
 
 Thank you!
