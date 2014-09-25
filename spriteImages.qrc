@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/spriteImages">
+        <file>bp.png</file>
+        <file>wp.png</file>
+        <file>bb.png</file>
+        <file>bn.png</file>
+        <file>wb.png</file>
+        <file>wn.png</file>
+        <file>br.png</file>
+        <file>wq.png</file>
+        <file>wr.png</file>
+        <file>bk.png</file>
+        <file>wk.png</file>
+        <file>bq.png</file>
+        <file>Chess Board.png</file>
+    </qresource>
+</RCC>

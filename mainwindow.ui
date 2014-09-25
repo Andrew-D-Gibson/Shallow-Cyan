@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>779</width>
+    <height>653</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QVBoxLayout" name="layout"/>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="toPlayLabel">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>To Play Label</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="strengthLabel">
+        <property name="maximumSize">
+         <size>
+          <width>731</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Search: 1 s</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="strengthSlider">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>738</width>
+          <height>17</height>
+         </size>
+        </property>
+        <property name="maximum">
+         <number>9</number>
+        </property>
+        <property name="value">
+         <number>1</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Minimum</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>150</width>
+          <height>150</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ResetButton">
+        <property name="text">
+         <string>New Game</string>
+        </property>
+        <property name="shortcut">
+         <string>N</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="UndoButton">
+        <property name="text">
+         <string>Undo</string>
+        </property>
+        <property name="shortcut">
+         <string>U</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="MoveButton">
+        <property name="text">
+         <string>Move Now</string>
+        </property>
+        <property name="shortcut">
+         <string>M</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="flipButton">
+        <property name="text">
+         <string>Flip</string>
+        </property>
+        <property name="shortcut">
+         <string>F</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="QuitButton">
+        <property name="text">
+         <string>Quit</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>779</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuPosition">
+    <property name="title">
+     <string>Position</string>
+    </property>
+    <addaction name="actionPaste_FEN"/>
+    <addaction name="actionCopy_FEN"/>
+   </widget>
+   <addaction name="menuPosition"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionPaste_FEN">
+   <property name="text">
+    <string>Paste FEN</string>
+   </property>
+   <property name="shortcut">
+    <string>Meta+V</string>
+   </property>
+  </action>
+  <action name="actionCopy_FEN">
+   <property name="text">
+    <string>Copy FEN</string>
+   </property>
+   <property name="shortcut">
+    <string>Meta+C</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
