@@ -58,9 +58,3 @@ char cMove::getCapturedPiece() {
 void cMove::setCapturedPiece(char capturedPiece) {
     moveInfo |= capturedPiece << 20;
 }
-
-
-// Useful for debugging and the log.
-void cMove::draw() {
-    std::cout << square[getFrom()] << "-" << square[getTo()];
-}

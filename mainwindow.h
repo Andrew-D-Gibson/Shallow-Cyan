@@ -9,55 +9,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QtWidgets>
-
-#include "gui.h"
-#include "game_manager.h"
-
-
-// Class "myView" is responsible for managine interaction between the GUI
-// and the gameManager.  It also handles mouse events.
-class myView : public QGraphicsView
-{
-    Q_OBJECT
-
-public:
-    myView(QGraphicsScene *scene) : QGraphicsView(scene) {}
-
-    // Sub Classes
-    GUI *display;
-    gameManager gameManager;
-
-    // Functions
-    bool checkGameState();
-    void move();
-
-    // Info
-    bool gameOver = 0, ready = 0, tracking = 0;
-    int pieceTracking;
-
-public slots:
-    void mousePressEvent(QMouseEvent *event);
-    void mouseReleaseEvent(QMouseEvent *event);
-    void mouseMoveEvent(QMouseEvent *event);
-
-signals:
-    void moveSearch();
-    void updateToPlayLabel();
-
-
-protected:
-    void resizeEvent(QResizeEvent *event)
-    {
-        QGraphicsView::resizeEvent(event);
-        fitInView(sceneRect(), Qt::KeepAspectRatio);
-    }
-
-};
+#include "myview.h"
 
 
 // Class "searchThread" is a custom thread used to run the search while keeping the
-// GUI running and without locking the computer.
+// GUI running and without locking the computer.  It is a part of the class "MainWindow."
 class searchThread : public QThread {
 
     Q_OBJECT
@@ -147,5 +103,6 @@ private:
     QGraphicsScene *scene;
 
 };
+
 
 #endif // MAINWINDOW_H

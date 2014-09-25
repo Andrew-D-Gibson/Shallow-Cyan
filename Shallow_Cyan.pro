@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     move.cpp \
     pl_move_gen.cpp \
     legal_move_gen.cpp \
-    gui.cpp
+    gui.cpp \
+    myview.cpp
 
 HEADERS  += mainwindow.h \
     bitboard.h \
@@ -31,7 +32,8 @@ HEADERS  += mainwindow.h \
     move.h \
     pl_move_gen.h \
     legal_move_gen.h \
-    gui.h
+    gui.h \
+    myview.h
 
 FORMS    += mainwindow.ui
 

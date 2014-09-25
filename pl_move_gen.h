@@ -60,4 +60,5 @@ namespace moveGen {
 
 }
 
+
 #endif /* defined(__Shallow_Cyan__Pseudo_Legal_Move_Gen__) */

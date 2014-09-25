@@ -67,9 +67,9 @@ struct gameManager {
 
     int makePlayerMove(int from, int to, int promoFlag = 0);
 
-    int checkGameState();
-
     bool undo();
+
+    int checkGameState();
 
     cMove iterativeSearch(cBoard board, int timeToSearch, int depth = std::numeric_limits<int>::max());
 

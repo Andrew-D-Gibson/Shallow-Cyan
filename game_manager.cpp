@@ -9,6 +9,7 @@
 #include "game_manager.h"
 #include <sstream>
 
+
 gameManager::gameManager() {
     genZobrist();
     board.reset();
@@ -71,6 +72,22 @@ int gameManager::makePlayerMove(int from, int to, int promoFlag) {
 }
 
 
+// Function "undo" undoes the last move played, using
+// the information stored in its vectors to replace the board's state.
+// It returns its success.
+bool gameManager::undo() {
+
+    if (moveHistory.prevMoves.size() >= 1) {
+           board.unMove(moveHistory.prevMoves[moveHistory.prevMoves.size()-1], moveHistory.prevMove_CastlingRights[moveHistory.prevMove_CastlingRights.size()-1], moveHistory.prevEpSquares[moveHistory.prevEpSquares.size()-1], moveHistory.prevFiftyMoves[moveHistory.prevFiftyMoves.size()-1]);
+           moveHistory.pop();
+
+           return 1;
+     }
+
+    return 0;
+}
+
+
 // Function "checkGameState" is used to check for checkmates and 
 // stalemates at the end of every computer and player move.
 // It returns 0 for a normal state, -1 for a black win, 1 for a white win, and 5 for a draw.
@@ -94,24 +111,9 @@ int gameManager::checkGameState() {
 }
 
 
-// Function "undo" undoes the last move played, using 
-// the information stored in its vectors to replace the board's state.
-// It returns its success.
-bool gameManager::undo() {
-
-    if (moveHistory.prevMoves.size() >= 1) {
-           board.unMove(moveHistory.prevMoves[moveHistory.prevMoves.size()-1], moveHistory.prevMove_CastlingRights[moveHistory.prevMove_CastlingRights.size()-1], moveHistory.prevEpSquares[moveHistory.prevEpSquares.size()-1], moveHistory.prevFiftyMoves[moveHistory.prevFiftyMoves.size()-1]);
-           moveHistory.prevMoves[moveHistory.prevMoves.size()-1].draw();
-           //std::cout << " " << static_cast<int>(moveHistory.prevMoves[moveHistory.prevMoves.size()-1].getFlags()) << std::endl;
-           moveHistory.pop();
-
-           return 1;
-     }
-
-    return 0;
-}
-
-// Function "iterativeSearch" 
+// Function "iterativeSearch" is the top level search algorithm.
+//  It can be given either a specific amount of time to search,
+// or a set depth to search, and returns teh best move it finds.
 cMove gameManager::iterativeSearch(cBoard board, int timeToSearch, int depth) {
 
     time_t startTime, endTime;

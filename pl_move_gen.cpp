@@ -236,7 +236,7 @@ cBitboard moveGen::rook(int &rookSQ, cBitboard &occupied) {
 // Again, they do so with no regard to whether they attack friendly or enemy pieces.
 
 
-// pawnForward returns all the possible one square forward and two square forward moves for a set of pawns. 
+// Function "pawnForward" returns all the possible one square forward and two square forward moves for a set of pawns.
 cBitboard moveGen::pawnForward(cBitboard &pawnLoc, cBitboard &occupied, bool color) {
     
     int direction = color ? 1 : -1;
@@ -258,7 +258,7 @@ cBitboard moveGen::pawnForward(cBitboard &pawnLoc, cBitboard &occupied, bool col
 }
 
 
-// pawnLeftAtt returns all the possible left attacks for a set of pawns, 
+// Function "pawnLeftAtt" returns all the possible left attacks for a set of pawns,
 // regardless of whether pieces exist to attack on each of those squares.
 cBitboard moveGen::pawnLeftAtt(cBitboard &pawnLoc, bool color) {
     
@@ -273,7 +273,7 @@ cBitboard moveGen::pawnLeftAtt(cBitboard &pawnLoc, bool color) {
 }
 
 
-// pawnRightAtt returns all the possible right attacks for a set of pawns, 
+// Function "pawnRightAtt" returns all the possible right attacks for a set of pawns,
 // regardless of whether pieces exist to attack on each of those squares.
 cBitboard moveGen::pawnRightAtt(cBitboard &pawnLoc, bool color) {
     
@@ -286,6 +286,7 @@ cBitboard moveGen::pawnRightAtt(cBitboard &pawnLoc, bool color) {
     return moves;
     
 }
+
 
 
 cBitboard moveGen::allKnight(cBitboard knightLoc) {
@@ -303,6 +304,7 @@ cBitboard moveGen::allKnight(cBitboard knightLoc) {
     return allMoves;
 }
 
+
 cBitboard moveGen::allBishop(cBitboard bishopLoc, cBitboard &occupied) {
     
     cBitboard allMoves = 0;
@@ -318,6 +320,7 @@ cBitboard moveGen::allBishop(cBitboard bishopLoc, cBitboard &occupied) {
     return allMoves;
     
 }
+
 
 cBitboard moveGen::allRook(cBitboard rookLoc, cBitboard &occupied) {
     
@@ -336,13 +339,15 @@ cBitboard moveGen::allRook(cBitboard rookLoc, cBitboard &occupied) {
     return allMoves;
 }
 
+
 cBitboard moveGen::allQueen(cBitboard queenLoc, cBitboard &occupied) {
 
     return allBishop(queenLoc, occupied) | allRook(queenLoc, occupied);
 
 }
 
-// king returns all the possible moves for what should always be
+
+// Function "king" returns all the possible moves for what should always be
 // a single populated bitboard.
 cBitboard moveGen::king(cBitboard &kingLoc) {
 
