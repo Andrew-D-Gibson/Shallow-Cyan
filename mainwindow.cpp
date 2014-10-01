@@ -112,29 +112,6 @@ void MainWindow::on_ResetButton_clicked() {
     if (!view->ready)
         return;
 
-    newGamePU->exec();
-
-
-}
-
-void MainWindow::getColorChoice(int white) {
-
-    if (white == -1)
-        return;
-
-    if ( (white == 1 && view->display->flipped) || (white == 0 && !view->display->flipped) ) {
-
-        view->display->flipped = !view->display->flipped;
-
-        view->display->lastFrom = 63 - view->display->lastFrom;
-        view->display->lastTo = 63 - view->display->lastTo;
-        view->display->selected = view->display->selected;
-
-        view->display->setPos(view->gameManager.board.currentPos);
-        view->display->scene->update();
-
-    }
-
     view->gameOver = 0;
     view->display->updateSelected(-1);
     view->display->updateFromToIndicators(-1,-1);
@@ -145,10 +122,6 @@ void MainWindow::getColorChoice(int white) {
 
     view->scene()->update();
     view->update();
-
-    if (!white)
-        moveSearch();
-
 }
 
 void MainWindow::on_QuitButton_clicked() {
@@ -156,7 +129,6 @@ void MainWindow::on_QuitButton_clicked() {
 }
 
 void MainWindow::on_UndoButton_clicked() {
-
     if (!view->ready)
         return;
 
@@ -252,9 +224,6 @@ void MainWindow::updateToPlayLabel() {
         ui->toPlayLabel->setText("<b>White to Play</b>");
     else
         ui->toPlayLabel->setText("<b>Black to Play</b>");
-
-    if (view->gameOver)
-        ui->toPlayLabel->setText("<b>Game Over</b>");
 }
 
 void MainWindow::updateSearchLeft() {

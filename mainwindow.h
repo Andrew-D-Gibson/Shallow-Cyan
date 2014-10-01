@@ -69,8 +69,6 @@ public:
 
     QTimer *searchLeftTimer;
 
-    newGamePopUp *newGamePU;
-
 public slots:
 
     void moveSearch();
@@ -80,8 +78,6 @@ public slots:
     void updateToPlayLabel();
 
     void updateSearchLeft();
-
-    void getColorChoice(int white);
 
 
 private slots:

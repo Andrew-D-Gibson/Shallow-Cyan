@@ -132,10 +132,8 @@ cMove gameManager::iterativeSearch(cBoard board, int timeToSearch, int depth) {
 
         time_t currentTime;
         time(&currentTime);
-        if (difftime(endTime, currentTime) < 0) {
-            std::cout << "From: " << bestMove.getFrom() << " To: " << bestMove.getTo() << std::endl;
-            return bestMove;   
-        }
+        if (difftime(endTime, currentTime) < 0)
+            return bestMove;
 
     }
 
